@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "/home/textfactory/tacolab/lib/python2.7/site-packages/pudb/__init__.py", line 93, in runscript
+    dbg._runscript(mainpyfile)
+  File "/home/textfactory/tacolab/lib/python2.7/site-packages/pudb/debugger.py", line 432, in _runscript
+    self.run(statement, globals=globals_, locals=locals_)
+  File "/usr/local/lib/python2.7.11/lib/python2.7/bdb.py", line 400, in run
+    exec cmd in globals, locals
+  File "<string>", line 1, in <module>
+  File "code/nbt.py", line 1940, in <module>
+    main()
+  File "code/nbt.py", line 1887, in main
+    NBT = NeuralBeliefTracker(config_filepath)
+  File "code/nbt.py", line 1758, in __init__
+    use_softmax=True, value_specific_decoder=self.value_specific_decoder, learn_belief_state_update=self.learn_belief_state_update)
+  File "code/models.py", line 123, in model_definition
+    h_utterance_representation = define_CNN_model(utterance_representations_full, num_filters, vector_dimension, longest_utterance_length)
+  File "code/models.py", line 34, in define_CNN_model
+    hidden_representation += tf.reshape(tf.concat(pooled, 3), [-1, num_filters])
+  File "/home/textfactory/tacolab/lib/python2.7/site-packages/tensorflow/python/ops/array_ops.py", line 458, in concat
+    dtype=dtypes.int32).get_shape(
+  File "/home/textfactory/tacolab/lib/python2.7/site-packages/tensorflow/python/framework/ops.py", line 620, in convert_to_tensor
+    ret = conversion_func(value, dtype=dtype, name=name, as_ref=as_ref)
+  File "/home/textfactory/tacolab/lib/python2.7/site-packages/tensorflow/python/framework/ops.py", line 563, in _TensorTensorConversionFunction
+    % (dtype.name, t.dtype.name, str(t)))
+ValueError: Tensor conversion requested dtype int32 for Tensor with dtype float32: 'Tensor("MaxPool:0", shape=(?, 1, 1, 300), dtype=float32)'
